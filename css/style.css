@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+*{margin: 0px; padding: 0px;}
+a{
+  color:#333;
+  text-decoration: none;
+}
+ul,li,ol{list-style: none;}
+body{
+  color: #333;
+  background-color: #fff;
+  font-family: '맑은 고딕', arial, sans-serif;
+  font-size: 12px;
+}
+
+#wrap{
+  width: 100%;
+}
+
+header{
+  background: aqua;
+}
+.h_inner, .f_inner{
+  width: 1200px;
+  height: 100px;
+  margin: 0px auto;
+}
+.h_inner{
+  position: relative;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.h_inner > h1{
+  width: 200px;
+  height: 40px;
+  background: rgb(156, 43, 43);
+  float: left;
+}
+
+
+
+/* 내비게이션 */
+/* 서브메뉴가 있을떄는 flex나 float:left가 좋음 */
+.gnb{
+  width: 500px;
+  height: 40px;
+  float: right;
+}
+.gnb > ul{
+  /* display: flex;
+  display: grid; */
+}
+.gnb > ul > li{
+  position: relative;
+  float: left;
+  /* display: inline;
+  display: inline-block; */
+}
+.gnb > ul > li > a{
+  display: block;
+  padding: 0 32px;
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.gnb > ul > li > a:hover{
+  color: #fff;
+  background-color: #737373;
+}
+.sub{
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  transition: 0.5s;
+  display: none;
+}
+.sub > li{}
+.sub > li > a{
+  text-align: center;
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+  transition: 0.5s;
+  color: #fff;
+}
+.sub > li > a:hover{
+  color: #737373;
+  background: #fff;
+}
+/* 메인메뉴에 마우스오버시 서브메뉴 전체 나오게 */
+.gnb:hover .sub{
+  display: block;
+}
+.gnb:hover::after{
+  display: block;
+  content: "";
+  width: 1200px;
+  height: 230px;
+  position: absolute;
+    top: 70px;
+    left: 0px;
+  background: #737373;
+  z-index: 10;
+}
+
+
+
+main{
+  width: 1200px;
+  height: 500px;
+  background-color: #ccc;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+/* 슬라이드 */
+.slide{
+  width: 100%;
+  height: 300px;
+  background: cornflowerblue;
+  overflow: hidden;
+}
+.slide > ul{
+  width: 3600px;
+  height: 300px;
+  display: flex;
+}
+.slide > ul > li{
+  width: 1200px;
+  height: 300px;
+  position: relative;
+}
+.slide > ul > li > h3{
+  position: absolute;
+    left: 50%;
+    top: 50%;
+  transform: translate(-50%);
+  background: #00c73c;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+
+
+
+.notice, .gallery, .icon{
+  width: 400px;
+  height: 200px;
+  background: darkgreen;
+}
+
+footer{
+  background: cadetblue;
+}
